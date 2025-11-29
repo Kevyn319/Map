@@ -1,0 +1,212 @@
+/* Importando fontes estilosas para o tema neon/futurista */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600&display=swap');
+
+/* Cor base Neon Vermelho Sangue */
+:root{
+  --neon-color:#FF2400; /* Scarlet/Blood Red */
+  --glow-color:#FF4D4D; /* Light Red/Crimson */
+  --secondary-glow:#800080; /* Deep Purple/Magenta for pulse contrast */
+  --dark-bg:#0A0A0A;
+  --font-title:'Orbitron', sans-serif;
+  --font-text:'Rajdhani', sans-serif;
+}
+
+/* Removendo margem do universal selector e aplicando dark theme */
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  background-color:var(--dark-bg);
+  font-family:var(--font-text);
+  color:var(--neon-color);
+}
+
+/* Wrapper principal com borda arredondada e animação de brilho (pulsação aprimorada) */
+#wrapper{
+  max-width:1000px;
+  margin:20px auto;
+  padding:30px;
+  border:3px solid var(--neon-color);
+  border-radius:15px;
+  box-shadow:0 0 15px var(--neon-color),0 0 30px var(--glow-color);
+  background-color:var(--dark-bg);
+  animation:neon-pulse 4s infinite ease-in-out;
+}
+
+/* Animação para o brilho da borda do wrapper com mudança sutil de cor */
+@keyframes neon-pulse {
+  0%{box-shadow:0 0 15px var(--neon-color),0 0 30px var(--glow-color);}
+  50%{box-shadow:0 0 25px var(--neon-color),0 0 45px var(--glow-color),0 0 60px var(--secondary-glow);}
+  100%{box-shadow:0 0 15px var(--neon-color),0 0 30px var(--glow-color);}
+}
+
+/* Animação de entrada mais dramática */
+@keyframes fade-in {
+  from{opacity:0;filter:blur(5px);transform:translateY(10px);}
+  to{opacity:1;filter:blur(0);transform:translateY(0);}
+}
+
+h1,figcaption,p{ 
+  opacity:0;
+  animation:fade-in 1.2s ease-out forwards;
+}
+
+h1{
+  font-family:var(--font-title);
+  animation-delay:0.2s;
+}
+
+figcaption{animation-delay:0.4s;}
+main p{animation-delay:0.6s;}
+
+/* Estilos ajustados ao tema */
+figure{text-align:center;margin-bottom:20px;}
+
+img{
+  border:3px solid var(--neon-color);
+  border-radius:10px;
+  box-shadow:0 0 10px var(--neon-color),0 0 20px var(--glow-color);
+  transition:transform 0.4s ease-in-out, box-shadow 0.4s;
+}
+
+img:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 20px var(--neon-color),0 0 40px var(--glow-color), 0 0 60px var(--secondary-glow);
+}
+
+/* Estilizando ícones Font Awesome */
+.fas, .far {
+  text-shadow: 0 0 5px var(--neon-color), 0 0 8px var(--glow-color);
+  margin-right: 8px;
+  margin-left: 8px;
+  display: inline-block;
+}
+
+/* Animação de rotação para os ícones do título */
+h1 .fas{
+  animation: icon-spin 4s infinite linear;
+}
+
+@keyframes icon-spin {
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg);}
+}
+
+h1{text-align:center;font-size:3em;margin:30px 0 15px 0;color:#FFF;text-shadow:0 0 5px var(--neon-color),0 0 10px var(--glow-color),0 0 15px var(--glow-color);}
+
+h3{text-align:center;margin-bottom:20px;color:var(--neon-color);text-shadow:0 0 3px var(--neon-color);}
+
+figcaption{text-align:center;margin-top:10px;font-style:italic;color:var(--glow-color);text-shadow:0 0 2px var(--glow-color);}
+
+main{max-width:90%;margin:0 auto;}
+
+p{font-size:22px;line-height:1.6;text-align:justify;margin:20px 0;color:var(--neon-color);text-shadow:0 0 1px var(--neon-color);}
+
+/* Estilo para o Botão Neon */
+button.neon-button{
+  display:block;
+  margin:40px auto;
+  background:transparent;
+  border:3px solid var(--neon-color);
+  border-radius:8px;
+  padding:10px 20px;
+  cursor:pointer;
+  box-shadow:0 0 5px var(--neon-color),0 0 10px var(--glow-color);
+  transition:all 0.3s ease-in-out;
+  animation:fade-in 1.2s ease-out forwards;
+  animation-delay:0.8s;
+  opacity:0;
+}
+
+button.neon-button a{
+  text-decoration:none;
+  font-family:var(--font-title);
+  font-size:1.2em;
+  color:var(--neon-color);
+  text-shadow:0 0 3px var(--neon-color);
+  transition:all 0.3s ease-in-out;
+}
+
+button.neon-button:hover{
+  background-color:var(--neon-color);
+  box-shadow:0 0 15px var(--neon-color),0 0 30px var(--glow-color);
+}
+
+button.neon-button:hover a{
+  color:var(--dark-bg);
+  text-shadow:none;
+}
+
+/* -------------------- RESPONSIVIDADE MAXIMIZADA -------------------- */
+
+/* 1. Ajustes para Tablets e Mobile Grande (máx. 900px) */
+@media (max-width: 900px) {
+  #wrapper {
+    max-width: 95%; 
+    padding: 20px; 
+  }
+  h1 {
+    font-size: 2.2em; 
+  }
+}
+
+/* 2. Ajustes para Smartphones Padrão (máx. 550px) */
+@media (max-width: 550px) { 
+  #wrapper {
+    margin: 10px;
+    padding: 12px; 
+    border-radius: 8px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 1.5em; 
+    margin: 15px 0 8px 0;
+  }
+
+  h3 {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px; 
+  }
+  
+  button.neon-button a {
+    font-size: 0.9em;
+  }
+}
+
+/* 3. Ajustes para Smartphones Muito Pequenos (máx. 400px) */
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.3em;
+    }
+    .fas, .far {
+        font-size: 0.8em; 
+        margin: 0 4px;
+    }
+    p {
+        font-size: 15px;
+    }
+    button.neon-button {
+        padding: 5px 10px;
+    }
+}
+
+/* 4. Ajustes para Monitores Ultra-Largos (min. 1600px) */
+@media (min-width: 1600px) {
+    #wrapper {
+        max-width: 1400px;
+        padding: 40px;
+    }
+    h1 {
+        font-size: 4em;
+    }
+    p {
+        font-size: 26px;
+    }
+}
