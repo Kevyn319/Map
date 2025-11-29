@@ -63,6 +63,10 @@ main p{animation-delay:0.8s;}
 figure{text-align:center;margin-bottom:20px;}
 
 img{
+  /* FIX DE RESPONSIVIDADE APLICADO AQUI */
+  max-width: 100%; 
+  height: auto;
+  /* FIM DO FIX */
   border:3px solid var(--neon-pink);
   border-radius:10px;
   box-shadow:0 0 10px var(--neon-pink),0 0 20px var(--glow-color);
